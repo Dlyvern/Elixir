@@ -15,6 +15,7 @@ file(GLOB HEADERS "include/*.h" "include/*.hpp")
 find_package(OpenGL REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_search_module(GLFW REQUIRED glfw3)
+find_package(glm REQUIRED)
 
 include_directories(${OPENGL_INCLUDE_DIRS} ${INCLUDE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 
@@ -28,6 +29,7 @@ target_link_libraries(${PROJECT_NAME}
         ${OPENGL_LIBRARIES}
         ${GLFW_LIBRARIES}
         GLEW
+        glm::glm
         dl
         X11
         pthread)

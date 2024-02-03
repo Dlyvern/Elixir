@@ -21,6 +21,12 @@ void ApplicationCore::Init()
         std::cerr << "Glfw error (" << std::to_string(error) << "). Description: " << description << "\n";
     });
 
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
+
+
     m_MainWindow.InitWindow(WindowMode::WINDOWED, "Elixir");
 
     GameLoop();
