@@ -9,8 +9,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(INCLUDE_DIR include)
 set(SRC_DIR src)
 
-file(GLOB SOURCES "src/*.cpp")
-file(GLOB HEADERS "include/*.h" "include/*.hpp")
+file(GLOB SOURCES "src/*.cpp" "Libraries/*.c")
+file(GLOB HEADERS "include/*.h" "include/*.hpp" "Libraries/*.h")
 
 find_package(OpenGL REQUIRED)
 find_package(PkgConfig REQUIRED)
@@ -21,7 +21,7 @@ include_directories(${OPENGL_INCLUDE_DIRS} ${INCLUDE_DIR} ${CMAKE_CURRENT_BINARY
 
 add_executable(${PROJECT_NAME} ${SOURCES} )
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_BINARY_DIR} ${INCLUDE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_BINARY_DIR} ${INCLUDE_DIR} Libraries)
 
 target_sources(${PROJECT_NAME} PUBLIC ${HEADERS})
 

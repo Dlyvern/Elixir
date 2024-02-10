@@ -25,6 +25,9 @@ void MainWindow::InitWindow(WindowMode windowMode, const std::string &title)
     glfwMakeContextCurrent(m_Window);
 
     glfwSetFramebufferSizeCallback(m_Window, FramebufferSizeCallback);
+
+
+    glfwSetWindowTitle(m_Window, "Underhell");
 }
 
 bool MainWindow::WindowIsOpen() const

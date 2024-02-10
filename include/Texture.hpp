@@ -21,6 +21,8 @@ public:
 
     void Bake();
 
+    void Bind();
+
     [[nodiscard]]GLuint GetID() const;
 };
 

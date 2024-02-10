@@ -1,9 +1,9 @@
 #ifndef SHADER_HPP
 #define SHADER_HPP
 
-#include "FileSystem.hpp"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include "FileSystem.hpp"
 
 class Shader
 {
